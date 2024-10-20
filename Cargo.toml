@@ -4,3 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+bevy_app = "0.14.2"
+
+[target.'cfg(not(target_family = "wasm"))'.dependencies]
+bevy-inspector-egui = "0.27.0"

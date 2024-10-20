@@ -1,14 +1,12 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
-}
+use bevy_app::App;
+use bevy_app::Plugin;
+use bevy_inspector_egui::quick::WorldInspectorPlugin;
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+pub struct DevToolsPlugin;
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
+impl Plugin for DevToolsPlugin {
+    fn build(&self, app: &mut App) {
+        #[cfg(not(target_family = "wasm"))]
+        app.add_plugins(WorldInspectorPlugin::new());
     }
 }
