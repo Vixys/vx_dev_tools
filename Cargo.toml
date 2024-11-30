@@ -1,10 +1,10 @@
 [package]
 name = "vx_dev_tools"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 
 [dependencies]
-bevy_app = "0.14.2"
+bevy_app = "0.15.0"
 
 [target.'cfg(not(target_family = "wasm"))'.dependencies]
-bevy-inspector-egui = "0.27.0"
+bevy-inspector-egui = "0.28.0"
